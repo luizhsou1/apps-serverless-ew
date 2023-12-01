@@ -1,0 +1,28 @@
+org: luizonic
+app: hello-sls-framework
+service: hello-sls-framework
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  hello1:
+    handler: index.hello1
+    events:
+      - httpApi:
+          path: /hello1
+          method: get
+  hello2:
+    handler: index.hello2
+    events:
+      - httpApi:
+          path: /hello2
+          method: get
+  hello3:
+    handler: index.hello3
+    events:
+      - httpApi:
+          path: /hello3
+          method: get
